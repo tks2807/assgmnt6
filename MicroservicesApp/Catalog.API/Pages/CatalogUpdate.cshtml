@@ -1,0 +1,49 @@
+﻿@page "{id}"
+@model Catalog.API.Pages.CatalogUpdateModel
+@{
+    ViewData["Title"] = "Update Catalog";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="_product.Id" type="hidden" />
+    <div>
+        <label>Name</label>
+        <div>
+            <input asp-for="_product.Name" />
+            <span asp-validation-for="_product.Name"></span>
+        </div>
+    </div>
+    <div>
+        <label>Category</label>
+        <div>
+            <input asp-for="_product.Category" />
+            <span asp-validation-for="_product.Category"></span>
+        </div>
+    </div>
+    <div>
+        <label>Summary</label>
+        <div>
+            <input asp-for="_product.Summary" />
+            <span asp-validation-for="_product.Summary"></span>
+        </div>
+    </div>
+    <div>
+        <label>Description</label>
+        <div>
+            <input asp-for="_product.Description" type="number" />
+            <span asp-validation-for="_product.Description"></span>
+        </div>
+    </div>
+    <div>
+        <label>Price</label>
+        <div>
+            <input asp-for="_product.Price" />
+            <span asp-validation-for="_product.Price"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Сохранить" />
+    </div>
+</form>

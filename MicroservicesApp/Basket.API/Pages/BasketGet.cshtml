@@ -1,0 +1,32 @@
+﻿@page
+@model Basket.API.Pages.BasketModel
+@{
+    ViewData["Title"] = "List of Basket";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p><a asp-page="Create">Add Basket</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Items</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+         {
+        <tr>
+            <td>@Model.Cart.Id</td>
+            <td>@Model.Cart.Username</td>
+            @foreach (var item in Model.Cart.Items)
+            {
+                <td>@item.ProductName</td>
+            }
+            <td>@Model.Cart.TotalPrice</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@page
+@model Ordering.API.Pages.OrderGetModel
+@{
+    ViewData["Title"] = "List of Catalog";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p><a asp-page="Create">Add Product</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Total Price</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    @foreach (var order in Model.order)
+    {
+        <tbody>
+        <th>@order.Username</th>
+        <th>@order.TotalPrice</th>
+        <th>@order.FirstName</th>
+        <th>@order.LastName</th>
+        <th>@order.EmailAddress</th>
+        <th>@order.AddressLine</th>
+        <th>
+            <button type="submit" asp-page-handler="Delete" asp-route-id="@order.Id">
+                Удалить
+            </button>
+        </th>
+        </tbody>
+    }
+</table>
